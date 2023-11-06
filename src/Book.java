@@ -5,11 +5,11 @@ public class Book {
     private int available;
     private double price;
     Book(){
-        this.title = " ";
+        this.title = null;
         this.author = new Author();
         this.type=  BookType.BOOK;
         this.available  =100;
-        this.price = 999;
+        this.price = 0;
     }
 
 
