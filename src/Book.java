@@ -4,7 +4,7 @@ public class Book {
     private BookType type;
     private int available;
     private double price;
-    Book(){
+   public  Book(){
         this.title = null;
         this.author = new Author();
         this.type=  BookType.BOOK;
@@ -13,7 +13,7 @@ public class Book {
     }
 
 
-    Book(String title, Author author, BookType type, int available, double price){
+     Book(String title, Author author, BookType type, int available, double price){
         this.title = title;
         this.author = author;
         this.type = type;
