@@ -7,32 +7,44 @@ public class Main {
         BookStore store = new BookStore();
         List<Book> bookList = store.getBooks();
         Scanner sc = new Scanner(System.in);
+        System.out.println("Моля въведете брой книги в книжарницата");
         int numOfBooks = sc.nextInt();
         for (int i = 0; i < numOfBooks; i++) {
-            Book book1 = new Book();
+            Book book = new Book();
             System.out.println("Въведете данни за книга <тип-COMIC_BOOK/CHILDREN_BOOK/BOOK> <заглавие> <автор> <брой налични> <цена>");
             BookType type = BookType.valueOf(sc.next().toUpperCase());
             switch (type) {
-                case CHILDREN_BOOK:book1 = new ChildrenBook();
-                case COMIC_BOOK:book1 = new ComicBook();
-                case BOOK: book1 = new Book();
+                case CHILDREN_BOOK:book = new ChildrenBook(); break;
+                case COMIC_BOOK:book = new ComicBook();break;
+                case BOOK: book = new Book();break;
             }
-            book1.setType(type);
-            book1.setTitle(sc.next());
+            book.setType(type);
+            book.setTitle(sc.next());
             Author a = new Author();
             a.setAuthorName(sc.next());
-            book1.setAuthor(a);
-            book1.setAvailable(sc.nextInt());
-            book1.setPrice(sc.nextDouble());
-            bookList.add(book1);
+            book.setAuthor(a);
+            book.setAvailable(sc.nextInt());
+            book.setPrice(sc.nextDouble());
 
+            switch(type){
+                case COMIC_BOOK:
+                    System.out.println("Въведете име на герой от книгата. ");
+                    ((ComicBook)book).setCharacterName(sc.next());
+                    break;
 
+                case  CHILDREN_BOOK:
+                    System.out.println("Въведете възрастта на детето, за което е предназначена книгата. ");
+                    ((ChildrenBook)book).setAge(sc.nextInt());
+                    break;
+            }
+            bookList.add(book);
         }
+
         sc.close();
 
-
-        for (Book b:bookList){
-            System.out.println(b.getTitle());
+        for (int i=0;i<numOfBooks;i+=2){
+            Book book = bookList.get(i);
+            store.sell(book);
         }
     }
 }

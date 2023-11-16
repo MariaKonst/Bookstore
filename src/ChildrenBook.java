@@ -11,12 +11,19 @@ public class ChildrenBook extends Book{
     }
  @Override
  public double getPrice(){
-
-     System.out.println(super.getTitle() + " is on sale 70%");
-        return super.getPrice()*0.3;
+     double price = super.getPrice();
+     double discountedPrice = price * 0.3;
+     System.out.println(this.toString() + " е на напмаление от  70% на цена от  " + discountedPrice + "лв. ");
+     return discountedPrice;
 }
 
-
+    @Override
+    public String toString() {
+        return "ChildrenBook{" +
+                super.toString()+
+                "age=" + age +
+                '}';
+    }
 
     public int getAge() {
         return age;

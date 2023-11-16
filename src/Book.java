@@ -21,6 +21,18 @@ public class Book {
         this.price = price;
 
     }
+
+    @Override
+    public String toString() {
+        return " " +
+                "title='" + title + '\'' +
+                ", author=" + author +
+                ", type=" + type +
+                ", available=" + available +
+                ", price=" + price +
+                ' ';
+    }
+
     public String getTitle() {
         return title;
     }

@@ -9,11 +9,19 @@ public class ComicBook extends Book{
     }
     @Override
     public double getPrice(){
-        System.out.println(super.getTitle() + " is on sale 60%");
-        return super.getPrice()*0.4;
+        double price = super.getPrice();
+        double discountedPrice = price * 0.4;
+        System.out.println(this.toString() + " is on sale 60% with discounted price " + discountedPrice);
+        return discountedPrice;
     }
 
-
+    @Override
+    public String toString() {
+        return "ComicBook{" +
+                super.toString() +
+                "characterName='" + characterName + '\'' +
+                '}';
+    }
 
     public String getCharacterName() {
         return characterName;
