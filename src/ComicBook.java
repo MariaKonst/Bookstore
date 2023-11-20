@@ -11,16 +11,16 @@ public class ComicBook extends Book{
     public double getPrice(){
         double price = super.getPrice();
         double discountedPrice = price * 0.4;
-        System.out.println(this.toString() + " is on sale 60% with discounted price " + discountedPrice);
+        System.out.println(this.toString() + " е на 60% намаление на нова цена от  " + discountedPrice + " лв.");
         return discountedPrice;
     }
 
     @Override
     public String toString() {
-        return "ComicBook{" +
-                super.toString() +
-                "characterName='" + characterName + '\'' +
-                '}';
+        return
+                super.toString() + "Име на герой от книгата е "   + characterName + ". "
+                + " Продадената книга";
+
     }
 
     public String getCharacterName() {

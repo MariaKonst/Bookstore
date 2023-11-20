@@ -16,10 +16,9 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "authorName='" + authorName + '\'' +
-                ", authorAge=" + authorAge +
-                '}';
+        return  authorName  +" , като авторът е на "
+                 + authorAge + " години"
+                ;
     }
 
     public String getAuthorName() {

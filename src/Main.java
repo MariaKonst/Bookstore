@@ -11,7 +11,7 @@ public class Main {
         int numOfBooks = sc.nextInt();
         for (int i = 0; i < numOfBooks; i++) {
             Book book = new Book();
-            System.out.println("Въведете данни за книга <тип-COMIC_BOOK/CHILDREN_BOOK/BOOK> <заглавие> <автор> <брой налични> <цена>");
+            System.out.println("Въведете данни за книга <тип-COMIC_BOOK/CHILDREN_BOOK/BOOK> <заглавие> <автор (само фамилия) > <брой налични> <цена>");
             BookType type = BookType.valueOf(sc.next().toUpperCase());
             switch (type) {
                 case CHILDREN_BOOK:book = new ChildrenBook(); break;

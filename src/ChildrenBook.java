@@ -13,16 +13,16 @@ public class ChildrenBook extends Book{
  public double getPrice(){
      double price = super.getPrice();
      double discountedPrice = price * 0.3;
-     System.out.println(this.toString() + " е на напмаление от  70% на цена от  " + discountedPrice + "лв. ");
+     System.out.println(this.toString() + " е на намаление със 70% на нова цена от  " + discountedPrice + "лв. ");
      return discountedPrice;
 }
 
     @Override
     public String toString() {
-        return "ChildrenBook{" +
+        return
                 super.toString()+
-                "age=" + age +
-                '}';
+                "Подходяща е за деца на " + age + " години." +
+                " Книгата";
     }
 
     public int getAge() {

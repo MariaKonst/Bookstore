@@ -14,10 +14,11 @@ public class BookStore {
     }
     public void sell(Book book) {
         int available = book.getAvailable();
-        if(available>=0) {
+        if(available>0) {
             book.setAvailable(available - 1);
-            System.out.println("Продаваме книгата със заглавие " + book.getTitle());
+            System.out.println("Продаваме книгата със заглавие " + "'" + book.getTitle() + "'" + ". " );
             System.out.println(book.getPrice());
+
         } else {
             System.out.println("Няма налични бройки!");
         }

@@ -22,16 +22,8 @@ public class Book {
 
     }
 
-    @Override
-    public String toString() {
-        return " " +
-                "title='" + title + '\'' +
-                ", author=" + author +
-                ", type=" + type +
-                ", available=" + available +
-                ", price=" + price +
-                ' ';
-    }
+
+
 
     public String getTitle() {
         return title;
@@ -71,5 +63,14 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return  "Името на произведението е " + title +
+                ", написана от " + author +
+                ", останали налични бройки след покупката са " + available +
+                ", а оригиналната цена е " + price + "лв."
+                ;
     }
 }
