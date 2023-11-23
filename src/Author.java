@@ -16,8 +16,8 @@ public class Author {
 
     @Override
     public String toString() {
-        return  authorName  +" , като авторът е на "
-                 + authorAge + " години"
+        return  authorName  +", като авторът е на "
+                 + authorAge + " години. "
                 ;
     }
 

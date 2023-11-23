@@ -3,13 +3,13 @@ public class Book {
     private Author author;
     private BookType type;
     private int available;
-    private double price;
+    private double originalPrice;
    public  Book(){
         this.title = null;
         this.author = new Author();
         this.type=  BookType.BOOK;
         this.available  =100;
-        this.price = 0;
+        this.originalPrice = 0;
     }
 
 
@@ -18,7 +18,7 @@ public class Book {
         this.author = author;
         this.type = type;
         this.available = available;
-        this.price = price;
+        this.originalPrice = price;
 
     }
 
@@ -57,20 +57,28 @@ public class Book {
         this.available = available;
     }
 
-    public double getPrice() {
+   /* public double getPrice() {
         return price;
+    }*/
+
+    public void setOriginalPrice(double originalPrice) {
+        this.originalPrice = originalPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public double getOriginalPrice(){
+
+        return originalPrice;
+    }
+    public double getPrice() {
+        System.out.println(this.toString() + "Книгата е продадена  на цена от  " + originalPrice + "лв. ");
+        return originalPrice;
     }
 
     @Override
     public String toString() {
-        return  "Името на произведението е " + title +
-                ", написана от " + author +
-                ", останали налични бройки след покупката са " + available +
-                ", а оригиналната цена е " + price + "лв."
+        return "Произведението е написано от " + author + "\n" +
+                "Останали налични бройки след покупката: " + available +"\n"+
+                "Оригиналната цена е " + originalPrice + "лв."+ "\n"
                 ;
     }
 }

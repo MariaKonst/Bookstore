@@ -11,9 +11,9 @@ public class ChildrenBook extends Book{
     }
  @Override
  public double getPrice(){
-     double price = super.getPrice();
+     double price = super.getOriginalPrice();
      double discountedPrice = price * 0.3;
-     System.out.println(this.toString() + " е на намаление със 70% на нова цена от  " + discountedPrice + "лв. ");
+     System.out.println(this.toString() + " е на намаление от 70% на нова цена от  " + discountedPrice + "лв. ");
      return discountedPrice;
 }
 
@@ -21,8 +21,8 @@ public class ChildrenBook extends Book{
     public String toString() {
         return
                 super.toString()+
-                "Подходяща е за деца на " + age + " години." +
-                " Книгата";
+                "Подходяща е за деца на " + age + " години." + "\n"+
+                        "Книгата";
     }
 
     public int getAge() {

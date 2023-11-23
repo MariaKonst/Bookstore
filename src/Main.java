@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +10,8 @@ public class Main {
         int numOfBooks = sc.nextInt();
         for (int i = 0; i < numOfBooks; i++) {
             Book book = new Book();
-            System.out.println("Въведете данни за книга <тип-COMIC_BOOK/CHILDREN_BOOK/BOOK> <заглавие> <автор (само фамилия) > <брой налични> <цена>");
+            System.out.println("Въведете данни за книга <тип-COMIC_BOOK/CHILDREN_BOOK/BOOK> " +
+                    "<заглавие>  <автор (само фамилия)>  <години на автора>  <брой налични>  <цена>");
             BookType type = BookType.valueOf(sc.next().toUpperCase());
             switch (type) {
                 case CHILDREN_BOOK:book = new ChildrenBook(); break;
@@ -22,9 +22,10 @@ public class Main {
             book.setTitle(sc.next());
             Author a = new Author();
             a.setAuthorName(sc.next());
+            a.setAuthorAge(sc.nextInt());
             book.setAuthor(a);
             book.setAvailable(sc.nextInt());
-            book.setPrice(sc.nextDouble());
+            book.setOriginalPrice(sc.nextDouble());
 
             switch(type){
                 case COMIC_BOOK:

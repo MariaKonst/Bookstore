@@ -9,9 +9,9 @@ public class ComicBook extends Book{
     }
     @Override
     public double getPrice(){
-        double price = super.getPrice();
+        double price = super.getOriginalPrice();
         double discountedPrice = price * 0.4;
-        System.out.println(this.toString() + " е на 60% намаление на нова цена от  " + discountedPrice + " лв.");
+        System.out.println(this.toString() +"Книгата е на 60% намаление на нова цена от  " + discountedPrice + " лв.");
         return discountedPrice;
     }
 
@@ -19,7 +19,7 @@ public class ComicBook extends Book{
     public String toString() {
         return
                 super.toString() + "Име на герой от книгата е "   + characterName + ". "
-                + " Продадената книга";
+               ;
 
     }
 
